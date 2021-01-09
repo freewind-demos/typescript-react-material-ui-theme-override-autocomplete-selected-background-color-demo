@@ -1,9 +1,7 @@
-TypeScript React "material-ui" Styled AutoComplete Demo
+TypeScript React "material-ui" Theme Override AutoComplete Selected Background Color Demo
 ===================================
 
-FIXME: 搞不定类型 
-
-https://material-ui.com/customization/components/#shorthand
+使用 createMuiTheme 和 overrides 来全局改变某个组件的某个样式
 
 ```
 npm install
