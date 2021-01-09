@@ -1,7 +1,7 @@
-TypeScript React "material-ui" Demo
+TypeScript React "material-ui" Override Css Class Rule Demo
 ===================================
 
-如何使用TypeScript来写"material-ui"
+https://material-ui.com/customization/components/#overriding-styles-with-classes
 
 ```
 npm install
