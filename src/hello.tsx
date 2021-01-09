@@ -1,33 +1,29 @@
-import React from 'react';
-import { makeStyles } from '@material-ui/core/styles';
-import Button from '@material-ui/core/Button';
+import {TextField} from '@material-ui/core'
+import React, {FC, useState} from 'react'
+import {MyAutoComplete} from './MyAutocomplete';
 
-const useStyles = makeStyles({
-  root: {
-    background: 'linear-gradient(45deg, #FE6B8B 30%, #FF8E53 90%)',
-    borderRadius: 3,
-    border: 0,
-    color: 'white',
-    height: 48,
-    padding: '0 30px',
-    boxShadow: '0 3px 5px 2px rgba(255, 105, 135, .3)',
-  },
-  label: {
-    textTransform: 'capitalize',
-  },
-});
+type Option = { label: string, value: string }
 
-export default function ClassesNesting() {
-  const classes = useStyles();
+const options: Option[] = [
+  {label: 'aaa', value: 'aaa'},
+  {label: 'bbb', value: 'bbb'},
+  {label: 'ccc', value: 'ccc'},
+  {label: 'ddd', value: 'ddd'},
+]
 
-  return (
-    <Button
-      classes={{
-        root: classes.root, // class name, e.g. `classes-nesting-root-x`
-        label: classes.label, // class name, e.g. `classes-nesting-label-x`
-      }}
-    >
-      classes nesting
-    </Button>
-  );
+export const Hello: FC = () => {
+  // Notice: the initial value should be passed explicitly
+  // if no initialState provided, it will be undefined and we will get error:
+  // `Material-UI: A component is changing the uncontrolled value state of Autocomplete to be controlled.`
+  const [selected, setSelected] = useState<Option | null>(null)
+
+  return <div>
+    <MyAutoComplete
+      options={options}
+      getOptionLabel={(option) => option.label}
+      value={selected}
+      onChange={(_, value) => setSelected(value)}
+      renderInput={(params) => <TextField {...params} label="Combo box" variant="outlined"/>}
+    />
+  </div>
 }

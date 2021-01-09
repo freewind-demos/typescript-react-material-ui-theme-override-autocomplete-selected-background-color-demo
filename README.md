@@ -1,7 +1,9 @@
-TypeScript React "material-ui" Override Css Class Rule Demo
+TypeScript React "material-ui" Styled AutoComplete Demo
 ===================================
 
-https://material-ui.com/customization/components/#overriding-styles-with-classes
+FIXME: 搞不定类型 
+
+https://material-ui.com/customization/components/#shorthand
 
 ```
 npm install
